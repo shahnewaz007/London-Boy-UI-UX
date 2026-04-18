@@ -64,7 +64,7 @@ function FilterCheckbox({ label, count, active, onToggle }: {
       >
         {active && <Check className="w-2.5 h-2.5 text-white" />}
       </div>
-      <span style={{ fontSize: SIZE.body, color: COLOR.primary, fontWeight: active ? WEIGHT.medium : WEIGHT.regular }}>
+      <span style={{ fontSize: SIZE.body, color: active ? COLOR.primary : '#666', fontWeight: active ? WEIGHT.medium : WEIGHT.regular }}>
         {label}
       </span>
       {count !== undefined && (
@@ -202,7 +202,7 @@ export function Products() {
               <div className="w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0" style={{ borderColor: COLOR.primary }}>
                 {sort === opt.value && <div className="w-2 h-2 rounded-full bg-black" />}
               </div>
-              <span style={{ fontSize: SIZE.body, color: COLOR.primary, fontWeight: sort === opt.value ? WEIGHT.medium : WEIGHT.regular }}>{opt.label}</span>
+              <span style={{ fontSize: SIZE.body, color: sort === opt.value ? COLOR.primary : '#666', fontWeight: sort === opt.value ? WEIGHT.medium : WEIGHT.regular }}>{opt.label}</span>
             </button>
           ))}
         </div>
@@ -234,7 +234,7 @@ export function Products() {
               return (
                 <button key={name} onClick={() => toggleColor(name)} className="flex items-center gap-2.5 w-full text-left py-1">
                   <div className="w-5 h-5 flex-shrink-0" style={{ backgroundColor: hex, border: (hex === '#FFFFFF' || hex === '#F5F0E8' || hex === '#F5D5B8') ? '1px solid #d1d5db' : '1px solid transparent', outline: isActive ? '2px solid #000' : '2px solid transparent', outlineOffset: '2px' }} />
-                  <span style={{ fontSize: SIZE.body, color: COLOR.primary, fontWeight: isActive ? WEIGHT.medium : WEIGHT.regular }}>{name}</span>
+                  <span style={{ fontSize: SIZE.body, color: isActive ? COLOR.primary : '#666', fontWeight: isActive ? WEIGHT.medium : WEIGHT.regular }}>{name}</span>
                   <span className="ml-auto" style={{ fontSize: SIZE.label, color: COLOR.textMuted }}>({count})</span>
                 </button>
               );
@@ -246,17 +246,17 @@ export function Products() {
       <SidebarSection title="Price Range" open={openSec.price} onToggle={() => toggleSec('price')}>
         <div>
           <div className="flex items-center gap-2 mb-3">
-              <div className="flex-1 border border-gray-200 px-2 py-1.5 text-center" style={{ fontSize: SIZE.body, color: COLOR.primary }}>£{priceMin}</div>
+              <div className="flex-1 border border-gray-200 px-2 py-1.5 text-center" style={{ fontSize: SIZE.body, color: '#666' }}>£{priceMin}</div>
             <span style={{ color: COLOR.border }}>—</span>
-            <div className="flex-1 border border-gray-200 px-2 py-1.5 text-center" style={{ fontSize: SIZE.body, color: COLOR.primary }}>£{priceMax}</div>
+            <div className="flex-1 border border-gray-200 px-2 py-1.5 text-center" style={{ fontSize: SIZE.body, color: '#666' }}>£{priceMax}</div>
           </div>
           <div className="space-y-3">
             <div>
-              <span style={TEXT.eyebrow}>Min</span>
+              <span style={{ ...TEXT.eyebrow, color: '#888' }}>Min</span>
               <input type="range" min={0} max={200} step={5} value={priceMin} onChange={(e) => { const v = +e.target.value; if (v < priceMax) setPriceMin(v); }} className="w-full accent-black mt-1" />
             </div>
             <div>
-              <span style={TEXT.eyebrow}>Max</span>
+              <span style={{ ...TEXT.eyebrow, color: '#888' }}>Max</span>
               <input type="range" min={0} max={200} step={5} value={priceMax} onChange={(e) => { const v = +e.target.value; if (v > priceMin) setPriceMax(v); }} className="w-full accent-black mt-1" />
             </div>
           </div>
@@ -312,7 +312,7 @@ export function Products() {
                 {NAV_CATS.map((c) => {
                   const isActive = categoryParam === c.value;
                   return (
-                    <button key={c.value} onClick={() => setCategory(c.value)} className="flex-shrink-0 px-4 py-1.5 transition-all" style={{ fontSize: SIZE.body, letterSpacing: TRACKING.nav, fontWeight: isActive ? WEIGHT.medium : WEIGHT.regular, color: isActive ? COLOR.inverse : COLOR.primary, backgroundColor: isActive ? COLOR.surfaceDark : 'transparent', border: '1px solid', borderColor: isActive ? COLOR.surfaceDark : COLOR.border, whiteSpace: 'nowrap' }}>
+                    <button key={c.value} onClick={() => setCategory(c.value)} className="flex-shrink-0 px-4 py-1.5 transition-all" style={{ fontSize: SIZE.body, letterSpacing: TRACKING.nav, fontWeight: isActive ? WEIGHT.medium : WEIGHT.regular, color: isActive ? COLOR.inverse : '#666', backgroundColor: isActive ? COLOR.surfaceDark : 'transparent', border: '1px solid', borderColor: isActive ? COLOR.surfaceDark : COLOR.border, whiteSpace: 'nowrap' }}>
                       {c.label}
                     </button>
                   );
