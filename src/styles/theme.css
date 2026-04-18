@@ -2,6 +2,8 @@
 
 :root {
   --font-size: 16px;
+  /* Header = 40px promo bar + 64px nav on mobile */
+  --header-h: 104px;
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
   --card: #ffffff;
@@ -39,6 +41,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* Desktop nav is 80px tall → total header = 40px promo + 80px nav = 120px */
+@media (min-width: 1024px) {
+  :root { --header-h: 120px; }
 }
 
 .dark {
@@ -126,6 +133,11 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Klein Text Book (400) — matches CK's primary UI/body typeface */
+    font-family: 'Klein Text', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   /**
@@ -137,45 +149,55 @@
     font-size: var(--font-size);
   }
 
+  /* Large page headings: Klein (display) Regular */
   h1 {
     font-size: var(--text-2xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: 'Klein', 'Klein Text', ui-sans-serif, system-ui, sans-serif;
   }
 
+  /* Section headings: Klein (display) Regular */
   h2 {
     font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+    font-weight: 400;
+    line-height: 1.3;
+    font-family: 'Klein', 'Klein Text', ui-sans-serif, system-ui, sans-serif;
   }
 
+  /* Sub-headings: Klein Text Book (400) */
   h3 {
     font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Klein Text', ui-sans-serif, system-ui, sans-serif;
   }
 
   h4 {
     font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
+    font-weight: 400;
     line-height: 1.5;
+    font-family: 'Klein Text', ui-sans-serif, system-ui, sans-serif;
   }
 
   label {
     font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
+    font-weight: 400;
     line-height: 1.5;
+    font-family: 'Klein Text', ui-sans-serif, system-ui, sans-serif;
   }
 
   button {
     font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
+    font-weight: 400;
     line-height: 1.5;
+    font-family: 'Klein Text', ui-sans-serif, system-ui, sans-serif;
   }
 
   input {
     font-size: var(--text-base);
-    font-weight: var(--font-weight-normal);
+    font-weight: 400;
     line-height: 1.5;
+    font-family: 'Klein Text', ui-sans-serif, system-ui, sans-serif;
   }
 }

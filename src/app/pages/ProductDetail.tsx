@@ -78,7 +78,7 @@ export function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="pt-20 min-h-screen flex items-center justify-center">
+      <div className="pt-[var(--header-h)] min-h-screen flex items-center justify-center">
         <div className="text-center">
           <p className="text-xs tracking-[0.4em] text-gray-300 mb-6">404</p>
           <h1 className="text-3xl font-light mb-8">Product not found</h1>
@@ -135,7 +135,7 @@ export function ProductDetail() {
   };
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-[var(--header-h)] min-h-screen bg-white">
       {/* ── Breadcrumb ── */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 border-b border-gray-100">
         <nav className="flex items-center gap-2 text-[0.65rem] tracking-[0.12em] text-gray-400 flex-wrap">
@@ -159,7 +159,7 @@ export function ProductDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_460px] xl:grid-cols-[1fr_500px] gap-10 lg:gap-16 xl:gap-24">
 
           {/* ────────── LEFT: Gallery ────────── */}
-          <div className="lg:sticky lg:top-20 lg:self-start">
+          <div className="lg:sticky lg:top-[128px] lg:self-start">
             {/* Main image */}
             <div className="relative aspect-[3/4] bg-gray-50 overflow-hidden mb-3 group">
               <AnimatePresence mode="wait">

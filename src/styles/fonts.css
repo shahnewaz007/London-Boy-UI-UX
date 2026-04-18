@@ -1,0 +1,376 @@
+/* =================================================================
+   Klein Text  —  text-optimised variant (body, nav, UI, labels)
+   Maps to Calvin Klein's primary UI typeface
+   ================================================================= */
+
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-thinitalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-extralightitalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-lightitalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Book = CK's standard reading weight (equivalent to 400 / regular) */
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-bookitalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-mediumitalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-bolditalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-extrabolditalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Text';
+  src: url('./klein/fonnts.com-kleintext-blackitalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+/* =================================================================
+   Klein Condensed  —  condensed variant (logo, impact headings)
+   ================================================================= */
+
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-thinitalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-extralightitalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-lightitalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-book-1.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-bookitalic-1.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-mediumitalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-bold-1.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-bolditalic-1.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-extrabold-1.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-extrabolditalic-1.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-black-1.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('./klein/fonnts.com-kleincondensed-blackitalic-1.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+/* =================================================================
+   Klein  —  display / editorial variant (large hero text)
+   Full version — TTF files
+   ================================================================= */
+
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein';
+  src: url('./klein/Klein-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

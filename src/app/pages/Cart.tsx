@@ -10,7 +10,7 @@ export function Cart() {
   const total = subtotal + delivery;
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-[var(--header-h)] min-h-screen bg-white">
       {/* Header strip */}
       <div className="border-b border-gray-100">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -146,7 +146,7 @@ export function Cart() {
 
             {/* Order summary */}
             <div className="lg:w-80 xl:w-96 flex-shrink-0">
-              <div className="bg-gray-50 p-6 sticky top-24">
+              <div className="bg-gray-50 p-6 sticky top-[128px]">
                 <p className="text-xs tracking-[0.3em] uppercase mb-6">Order Summary</p>
 
                 <div className="space-y-3 mb-6">

@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
+import { TEXT, BUTTON } from '../lib/design';
 
 interface CategoryBannerProps {
   title: string;
@@ -22,14 +23,15 @@ export function CategoryBanner({ title, subtitle, image, reverse, href = '/produ
         </div>
       </div>
       <div className="flex-1 text-center lg:text-left px-4 lg:px-12">
-        <p className="text-xs tracking-[0.3em] text-gray-400 mb-4 uppercase">London Boy</p>
-        <h2 className="mb-5" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', fontWeight: 300, lineHeight: 1.15 }}>
+        <p style={TEXT.eyebrow} className="mb-4">London Boy</p>
+        <h2 className="mb-5" style={TEXT.bannerTitle}>
           {title}
         </h2>
-        <p className="text-gray-500 mb-8 text-sm" style={{ lineHeight: 1.8 }}>{subtitle}</p>
+        <p className="mb-8" style={{ ...TEXT.body, fontSize: '0.95rem', fontWeight: 400, color: '#0a0a0a' }}>{subtitle}</p>
         <Link
           to={href}
-          className="group inline-flex items-center gap-2 border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors tracking-[0.15em] text-xs"
+          className="group inline-flex items-center gap-2 border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors tracking-[0.1em]"
+          style={BUTTON.outline}
         >
           EXPLORE COLLECTION
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

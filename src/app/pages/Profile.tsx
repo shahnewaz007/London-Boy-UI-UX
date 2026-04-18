@@ -71,7 +71,7 @@ export function Profile() {
   ] as const;
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-[var(--header-h)] min-h-screen bg-white">
       {/* Profile hero */}
       <div className="bg-gray-50 border-b border-gray-100">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 py-10">

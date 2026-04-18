@@ -74,7 +74,7 @@ export function Checkout() {
 
   if (step === 'confirmed') {
     return (
-      <div className="pt-16 min-h-screen bg-white flex items-center justify-center px-4">
+      <div className="pt-[var(--header-h)] min-h-screen bg-white flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -114,7 +114,7 @@ export function Checkout() {
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-[var(--header-h)] min-h-screen bg-white">
       {/* Header */}
       <div className="border-b border-gray-100">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -321,7 +321,7 @@ export function Checkout() {
 
           {/* Right: Mini order summary */}
           <div className="lg:w-72 xl:w-80 flex-shrink-0">
-            <div className="border border-gray-100 p-6 sticky top-24">
+            <div className="border border-gray-100 p-6 sticky top-[128px]">
               <p className="text-xs tracking-[0.3em] uppercase mb-5 text-gray-500">Order Summary</p>
               <div className="space-y-4 mb-5">
                 {items.map((item) => (
