@@ -37,8 +37,8 @@ export function Cart() {
           >
             <ShoppingBag className="w-16 h-16 text-gray-200" />
             <div>
-              <p className="text-gray-500 mb-1">Your bag is empty</p>
-              <p className="text-sm text-gray-400">Add some essentials to get started</p>
+              <p className="text-gray-500 mb-1" style={{ fontSize: '0.95rem', fontWeight: 400 }}>Your bag is empty</p>
+              <p className="text-gray-400" style={{ fontSize: '0.85rem', fontWeight: 400 }}>Add some essentials to get started</p>
             </div>
             <Link
               to="/products"
@@ -55,7 +55,7 @@ export function Cart() {
               {subtotal < 50 && (
                 <div className="bg-gray-50 border border-gray-100 px-5 py-3.5 mb-6 flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
-                  <p className="text-xs text-gray-600 tracking-wide">
+                  <p className="text-gray-600 tracking-wide" style={{ fontSize: '0.85rem', fontWeight: 400 }}>
                     Add <span className="text-black" style={{ fontWeight: 500 }}>£{(50 - subtotal).toFixed(2)}</span> more for free UK delivery
                   </p>
                 </div>
@@ -63,7 +63,7 @@ export function Cart() {
               {subtotal >= 50 && (
                 <div className="bg-black px-5 py-3.5 mb-6 flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
-                  <p className="text-xs text-white tracking-wide">You qualify for free UK delivery ✓</p>
+                  <p className="text-white tracking-wide" style={{ fontSize: '0.85rem', fontWeight: 400 }}>You qualify for free UK delivery ✓</p>
                 </div>
               )}
 
@@ -89,8 +89,8 @@ export function Cart() {
                         <div className="flex-1 flex flex-col justify-between">
                           <div className="flex justify-between items-start">
                             <div>
-                              <h3 className="text-sm mb-1" style={{ fontWeight: 400 }}>{item.name}</h3>
-                              <p className="text-xs text-gray-400 tracking-wider">
+                              <h3 className="mb-1" style={{ fontWeight: 400, fontSize: '0.95rem' }}>{item.name}</h3>
+                              <p className="text-gray-400 tracking-wider" style={{ fontSize: '0.85rem', fontWeight: 400 }}>
                                 {item.color} · Size {item.size}
                               </p>
                             </div>
@@ -111,7 +111,7 @@ export function Cart() {
                               >
                                 <Minus className="w-3 h-3" />
                               </button>
-                              <span className="w-10 text-center text-sm">{item.quantity}</span>
+                              <span className="w-10 text-center" style={{ fontSize: '0.95rem', fontWeight: 400 }}>{item.quantity}</span>
                               <button
                                 onClick={() => updateQuantity(item.id, item.color, item.size, item.quantity + 1)}
                                 className="w-9 h-9 flex items-center justify-center text-gray-500 hover:text-black hover:bg-gray-50 transition-colors"
@@ -121,7 +121,7 @@ export function Cart() {
                             </div>
 
                             {/* Price */}
-                            <p className="text-sm" style={{ fontWeight: 500 }}>
+                            <p style={{ fontWeight: 500, fontSize: '0.95rem' }}>
                               £{(item.price * item.quantity).toFixed(2)}
                             </p>
                           </div>
@@ -150,15 +150,15 @@ export function Cart() {
                 <p className="text-xs tracking-[0.3em] uppercase mb-6">Order Summary</p>
 
                 <div className="space-y-3 mb-6">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between" style={{ fontSize: '0.95rem', fontWeight: 400 }}>
                     <span className="text-gray-500">Subtotal ({totalItems} items)</span>
                     <span>£{subtotal.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between" style={{ fontSize: '0.95rem', fontWeight: 400 }}>
                     <span className="text-gray-500">Delivery</span>
                     <span>{delivery === 0 ? <span className="text-green-700">Free</span> : `£${delivery.toFixed(2)}`}</span>
                   </div>
-                  <div className="flex justify-between text-sm text-gray-400">
+                  <div className="flex justify-between text-gray-400" style={{ fontSize: '0.95rem', fontWeight: 400 }}>
                     <span>Estimated Duties</span>
                     <span>—</span>
                   </div>
@@ -166,10 +166,10 @@ export function Cart() {
 
                 <div className="border-t border-gray-200 pt-4 mb-6">
                   <div className="flex justify-between">
-                    <span className="text-sm tracking-wide">Total</span>
-                    <span className="text-sm" style={{ fontWeight: 500 }}>£{total.toFixed(2)}</span>
+                    <span className="tracking-wide" style={{ fontSize: '0.95rem', fontWeight: 400 }}>Total</span>
+                    <span style={{ fontWeight: 500, fontSize: '0.95rem' }}>£{total.toFixed(2)}</span>
                   </div>
-                  <p className="text-xs text-gray-400 mt-1">Including VAT</p>
+                  <p className="text-gray-400 mt-1" style={{ fontSize: '0.85rem', fontWeight: 400 }}>Including VAT</p>
                 </div>
 
                 {/* Promo code */}
@@ -177,7 +177,8 @@ export function Cart() {
                   <input
                     type="text"
                     placeholder="Promo code"
-                    className="flex-1 border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:border-black transition-colors"
+                    className="flex-1 border border-gray-200 px-3 py-2.5 focus:outline-none focus:border-black transition-colors"
+                    style={{ fontSize: '0.95rem', fontWeight: 400 }}
                   />
                   <button className="border border-black px-4 py-2.5 text-xs tracking-[0.15em] hover:bg-black hover:text-white transition-colors">
                     APPLY
@@ -191,7 +192,7 @@ export function Cart() {
                   CHECKOUT <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
 
-                <p className="text-center text-xs text-gray-400 mt-4">
+                <p className="text-center text-gray-400 mt-4" style={{ fontSize: '0.85rem', fontWeight: 400 }}>
                   Secure checkout · Free returns within 30 days
                 </p>
 

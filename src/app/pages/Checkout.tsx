@@ -48,11 +48,12 @@ function StepIndicator({ current }: { current: Step }) {
 function InputField({ label, type = 'text', placeholder, half = false }: { label: string; type?: string; placeholder: string; half?: boolean }) {
   return (
     <div className={half ? 'flex-1 min-w-0' : 'w-full'}>
-      <label className="block text-xs tracking-[0.15em] text-gray-500 mb-1.5 uppercase">{label}</label>
+      <label className="block text-xs tracking-[0.15em] text-gray-500 mb-1.5 uppercase" style={{ fontWeight: 400 }}>{label}</label>
       <input
         type={type}
         placeholder={placeholder}
-        className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors"
+        className="w-full border border-gray-200 px-4 py-3 focus:outline-none focus:border-black transition-colors"
+        style={{ fontSize: '0.95rem', fontWeight: 400 }}
       />
     </div>
   );
@@ -88,10 +89,10 @@ export function Checkout() {
           <h1 className="mb-4" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 300 }}>
             Thank you.
           </h1>
-          <p className="text-gray-500 text-sm mb-2" style={{ lineHeight: 1.7 }}>
+          <p className="text-gray-500 mb-2" style={{ lineHeight: 1.7, fontSize: '0.95rem', fontWeight: 400 }}>
             Your order <span style={{ fontWeight: 500, color: '#000' }}>#LB-{Math.floor(Math.random() * 90000) + 10000}</span> has been placed successfully.
           </p>
-          <p className="text-gray-400 text-sm mb-10">
+          <p className="text-gray-400 mb-10" style={{ fontSize: '0.85rem', fontWeight: 400 }}>
             A confirmation will be sent to your email address.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -168,8 +169,8 @@ export function Checkout() {
                       <InputField label="Postcode" placeholder="W1K 1AA" half />
                     </div>
                     <div>
-                      <label className="block text-xs tracking-[0.15em] text-gray-500 mb-1.5 uppercase">Country</label>
-                      <select className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-white appearance-none">
+                      <label className="block text-xs tracking-[0.15em] text-gray-500 mb-1.5 uppercase" style={{ fontWeight: 400 }}>Country</label>
+                      <select className="w-full border border-gray-200 px-4 py-3 focus:outline-none focus:border-black transition-colors bg-white appearance-none" style={{ fontSize: '0.95rem', fontWeight: 400 }}>
                         <option>United Kingdom</option>
                         <option>France</option>
                         <option>Germany</option>
@@ -190,10 +191,10 @@ export function Checkout() {
                       <label key={i} className="flex items-center gap-3 cursor-pointer py-2">
                         <input type="radio" name="delivery" defaultChecked={i === 0} className="accent-black" />
                         <div className="flex-1">
-                          <p className="text-sm">{opt.label}</p>
-                          <p className="text-xs text-gray-400">{opt.sub}</p>
+                          <p style={{ fontSize: '0.95rem', fontWeight: 400 }}>{opt.label}</p>
+                          <p className="text-gray-400" style={{ fontSize: '0.85rem', fontWeight: 400 }}>{opt.sub}</p>
                         </div>
-                        <span className="text-sm">{opt.price}</span>
+                        <span style={{ fontSize: '0.95rem', fontWeight: 400 }}>{opt.price}</span>
                       </label>
                     ))}
                   </div>
@@ -234,9 +235,9 @@ export function Checkout() {
                   <div className="space-y-4">
                     <InputField label="Cardholder Name" placeholder="James Wilson" />
                     <div>
-                      <label className="block text-xs tracking-[0.15em] text-gray-500 mb-1.5 uppercase">Card Number</label>
+                      <label className="block text-xs tracking-[0.15em] text-gray-500 mb-1.5 uppercase" style={{ fontWeight: 400 }}>Card Number</label>
                       <div className="flex items-center border border-gray-200 px-4 py-3 gap-3 focus-within:border-black transition-colors">
-                        <input type="text" placeholder="4242 4242 4242 4242" className="flex-1 text-sm focus:outline-none" />
+                        <input type="text" placeholder="4242 4242 4242 4242" className="flex-1 focus:outline-none" style={{ fontSize: '0.95rem', fontWeight: 400 }} />
                         <div className="flex gap-1">
                           {['VISA', 'MC'].map((c) => (
                             <span key={c} className="text-xs text-gray-300 tracking-wider">{c}</span>
@@ -250,7 +251,7 @@ export function Checkout() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 mt-6 text-xs text-gray-400">
+                  <div className="flex items-center gap-2 mt-6 text-gray-400" style={{ fontSize: '0.85rem', fontWeight: 400 }}>
                     <Lock className="w-3.5 h-3.5" />
                     <span>Your payment information is encrypted and secure.</span>
                   </div>
@@ -284,7 +285,7 @@ export function Checkout() {
                     ].map((row) => (
                       <div key={row.label} className="flex justify-between py-3 border-b border-gray-50">
                         <span className="text-xs tracking-wide text-gray-400 uppercase">{row.label}</span>
-                        <span className="text-sm text-right max-w-xs">{row.value}</span>
+                        <span className="text-right max-w-xs" style={{ fontSize: '0.95rem', fontWeight: 400 }}>{row.value}</span>
                       </div>
                     ))}
                   </div>
@@ -295,10 +296,10 @@ export function Checkout() {
                       <div key={`${item.id}-${item.color}`} className="flex gap-4 py-3">
                         <img src={item.image} alt={item.name} className="w-14 aspect-[3/4] object-cover bg-gray-100" />
                         <div className="flex-1">
-                          <p className="text-sm">{item.name}</p>
-                          <p className="text-xs text-gray-400">{item.color} · Size {item.size} · Qty {item.quantity}</p>
+                          <p style={{ fontSize: '0.95rem', fontWeight: 400 }}>{item.name}</p>
+                          <p className="text-gray-400" style={{ fontSize: '0.85rem', fontWeight: 400 }}>{item.color} · Size {item.size} · Qty {item.quantity}</p>
                         </div>
-                        <p className="text-sm">£{(item.price * item.quantity).toFixed(2)}</p>
+                        <p style={{ fontSize: '0.95rem', fontWeight: 400 }}>£{(item.price * item.quantity).toFixed(2)}</p>
                       </div>
                     ))}
                   </div>
@@ -311,7 +312,7 @@ export function Checkout() {
                     PLACE ORDER — £{total.toFixed(2)}
                   </button>
 
-                  <p className="text-center text-xs text-gray-400 mt-3">
+                  <p className="text-center text-gray-400 mt-3" style={{ fontSize: '0.85rem', fontWeight: 400 }}>
                     By placing your order you agree to our Terms & Privacy Policy.
                   </p>
                 </motion.div>
@@ -333,23 +334,23 @@ export function Checkout() {
                       </span>
                     </div>
                     <div className="flex-1">
-                      <p className="text-xs" style={{ fontWeight: 400 }}>{item.name}</p>
-                      <p className="text-xs text-gray-400">{item.color} · {item.size}</p>
-                      <p className="text-xs mt-1">£{(item.price * item.quantity).toFixed(2)}</p>
+                      <p style={{ fontWeight: 400, fontSize: '0.85rem' }}>{item.name}</p>
+                      <p className="text-gray-400" style={{ fontSize: '0.85rem', fontWeight: 400 }}>{item.color} · {item.size}</p>
+                      <p className="mt-1" style={{ fontSize: '0.85rem', fontWeight: 400 }}>£{(item.price * item.quantity).toFixed(2)}</p>
                     </div>
                   </div>
                 ))}
               </div>
               <div className="border-t border-gray-100 pt-4 space-y-2">
-                <div className="flex justify-between text-sm text-gray-500">
+                <div className="flex justify-between text-gray-500" style={{ fontSize: '0.95rem', fontWeight: 400 }}>
                   <span>Subtotal</span>
                   <span>£{subtotal.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between text-sm text-gray-500">
+                <div className="flex justify-between text-gray-500" style={{ fontSize: '0.95rem', fontWeight: 400 }}>
                   <span>Delivery</span>
                   <span>{delivery === 0 ? 'Free' : `£${delivery.toFixed(2)}`}</span>
                 </div>
-                <div className="flex justify-between text-sm pt-2 border-t border-gray-100">
+                <div className="flex justify-between pt-2 border-t border-gray-100" style={{ fontSize: '0.95rem', fontWeight: 400 }}>
                   <span>Total</span>
                   <span style={{ fontWeight: 500 }}>£{total.toFixed(2)}</span>
                 </div>

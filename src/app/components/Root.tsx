@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router';
 import { useEffect } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { AddedToBagNotification } from './AddedToBagNotification';
 
 export function Root() {
   const { pathname } = useLocation();
@@ -13,6 +14,7 @@ export function Root() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Header />
+      <AddedToBagNotification />
       <main className="flex-1">
         <Outlet />
       </main>

@@ -82,7 +82,7 @@ export function Profile() {
             <div>
               <p className="text-xs tracking-[0.3em] text-gray-400 mb-0.5 uppercase">My Account</p>
               <h1 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 300 }}>James Wilson</h1>
-              <p className="text-sm text-gray-400 mt-0.5">james.wilson@example.com · Member since Jan 2024</p>
+              <p className="text-gray-400 mt-0.5" style={{ fontSize: '0.85rem', fontWeight: 400 }}>james.wilson@example.com · Member since Jan 2024</p>
             </div>
             <button className="ml-auto hidden sm:flex items-center gap-2 text-xs tracking-[0.15em] text-gray-400 hover:text-black transition-colors">
               <LogOut className="w-3.5 h-3.5" />
@@ -147,13 +147,13 @@ export function Profile() {
                   >
                     <div className="flex items-center gap-6">
                       <div>
-                        <p className="text-sm" style={{ fontWeight: 500 }}>#{order.id}</p>
-                        <p className="text-xs text-gray-400 mt-0.5">{order.date}</p>
+                      <p style={{ fontWeight: 500, fontSize: '0.95rem' }}>#{order.id}</p>
+                      <p className="text-gray-400 mt-0.5" style={{ fontSize: '0.85rem', fontWeight: 400 }}>{order.date}</p>
                       </div>
                       <StatusBadge status={order.status} />
                     </div>
                     <div className="flex items-center gap-4">
-                      <span className="text-sm text-gray-500 hidden sm:block">£{order.total.toFixed(2)}</span>
+                      <span className="text-gray-500 hidden sm:block" style={{ fontSize: '0.95rem', fontWeight: 400 }}>£{order.total.toFixed(2)}</span>
                       <ChevronRight className="w-4 h-4 text-gray-400 transition-transform" style={{ transform: expandedOrder === order.id ? 'rotate(90deg)' : 'none' }} />
                     </div>
                   </button>
@@ -173,9 +173,9 @@ export function Profile() {
                               <div key={idx} className="flex gap-4">
                                 <img src={item.image} alt={item.name} className="w-16 aspect-[3/4] object-cover bg-gray-50" />
                                 <div className="flex-1">
-                                  <p className="text-sm">{item.name}</p>
-                                  <p className="text-xs text-gray-400 mt-0.5">Size {item.size} · Qty {item.qty}</p>
-                                  <p className="text-xs mt-1">£{(item.price * item.qty).toFixed(2)}</p>
+                                <p style={{ fontSize: '0.95rem', fontWeight: 400 }}>{item.name}</p>
+                                <p className="text-gray-400 mt-0.5" style={{ fontSize: '0.85rem', fontWeight: 400 }}>Size {item.size} · Qty {item.qty}</p>
+                                <p className="mt-1" style={{ fontSize: '0.85rem', fontWeight: 400 }}>£{(item.price * item.qty).toFixed(2)}</p>
                                 </div>
                               </div>
                             ))}
@@ -209,7 +209,7 @@ export function Profile() {
               {wishlisted.length === 0 ? (
                 <div className="text-center py-20">
                   <Heart className="w-12 h-12 text-gray-200 mx-auto mb-4" />
-                  <p className="text-gray-400 text-sm mb-4">Your wishlist is empty</p>
+                  <p className="text-gray-400 mb-4" style={{ fontSize: '0.95rem', fontWeight: 400 }}>Your wishlist is empty</p>
                   <Link to="/products" className="text-xs tracking-[0.2em] underline">BROWSE PRODUCTS</Link>
                 </div>
               ) : (
@@ -232,8 +232,8 @@ export function Profile() {
                         </Link>
                       </div>
                       <p className="text-xs text-gray-400 tracking-wider mb-0.5" style={{ fontSize: '0.6rem' }}>{item.subcategory}</p>
-                      <p className="text-sm group-hover:underline" style={{ fontWeight: 400 }}>{item.name}</p>
-                      <p className="text-sm mt-0.5">£{item.price}</p>
+                      <p className="group-hover:underline" style={{ fontWeight: 400, fontSize: '0.95rem' }}>{item.name}</p>
+                      <p className="mt-0.5" style={{ fontSize: '0.95rem', fontWeight: 400 }}>£{item.price}</p>
                     </div>
                   ))}
                 </div>
@@ -265,7 +265,7 @@ export function Profile() {
                       <div key={f.label}>
                         <label className="block text-xs tracking-[0.15em] text-gray-400 mb-1.5 uppercase">{f.label}</label>
                         <div className="flex items-center border border-gray-200 focus-within:border-black transition-colors">
-                          <input defaultValue={f.val} className="flex-1 px-4 py-3 text-sm focus:outline-none" />
+                          <input defaultValue={f.val} className="flex-1 px-4 py-3 focus:outline-none" style={{ fontSize: '0.95rem', fontWeight: 400 }} />
                           <button className="px-4 text-gray-300 hover:text-black transition-colors">
                             <Edit2 className="w-3.5 h-3.5" />
                           </button>
@@ -286,7 +286,7 @@ export function Profile() {
                     ].map((f) => (
                       <div key={f.label}>
                         <label className="block text-xs tracking-[0.15em] text-gray-400 mb-1.5 uppercase">{f.label}</label>
-                        <input defaultValue={f.val} className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors" />
+                        <input defaultValue={f.val} className="w-full border border-gray-200 px-4 py-3 focus:outline-none focus:border-black transition-colors" style={{ fontSize: '0.95rem', fontWeight: 400 }} />
                       </div>
                     ))}
                   </div>
@@ -303,7 +303,7 @@ export function Profile() {
                       { label: 'Style editorial & lookbooks', on: false },
                     ].map((pref) => (
                       <label key={pref.label} className="flex items-center justify-between cursor-pointer py-2 border-b border-gray-50">
-                        <span className="text-sm text-gray-600">{pref.label}</span>
+                        <span className="text-gray-600" style={{ fontSize: '0.95rem', fontWeight: 400 }}>{pref.label}</span>
                         <input type="checkbox" defaultChecked={pref.on} className="accent-black" />
                       </label>
                     ))}

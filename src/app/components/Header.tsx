@@ -1,8 +1,9 @@
 import { Search, User, ShoppingBag, Menu, X, Heart } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router';
 import { useCart } from '../context/CartContext';
 import { COLOR, FAMILY, TEXT, TRACKING } from '../lib/design';
+import { CartHoverPanel } from './CartHoverPanel';
 
 const PROMO_MESSAGES = [
   'Join London Boy and get 10% off your first order',
@@ -24,8 +25,18 @@ export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [promoIndex, setPromoIndex] = useState(0);
   const [promoVisible, setPromoVisible] = useState(true);
+  const [cartOpen, setCartOpen] = useState(false);
+  const cartHideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { totalItems } = useCart();
   const { pathname } = useLocation();
+
+  const openCart = () => {
+    if (cartHideTimer.current) clearTimeout(cartHideTimer.current);
+    setCartOpen(true);
+  };
+  const closeCart = () => {
+    cartHideTimer.current = setTimeout(() => setCartOpen(false), 120);
+  };
 
   // Auto-cycle promo messages with fade transition
   useEffect(() => {
@@ -147,18 +158,24 @@ export function Header() {
                 <User style={{ width: 18, height: 18 }} />
               </Link>
 
-              {/* Bag — always visible */}
-              <Link to="/cart" className="p-2 hover:opacity-55 transition-opacity text-black relative" aria-label={`Cart (${totalItems} items)`}>
-                <ShoppingBag style={{ width: 18, height: 18 }} />
-                {totalItems > 0 && (
-                  <span
-                    className="absolute top-0.5 right-0.5 bg-black text-white rounded-full flex items-center justify-center"
-                    style={{ fontSize: 9, width: 15, height: 15, fontWeight: 600 }}
-                  >
-                    {totalItems > 9 ? '9+' : totalItems}
-                  </span>
-                )}
-              </Link>
+              {/* Bag — always visible; hover opens panel, click goes to /cart */}
+              <div
+                className="relative"
+                onMouseEnter={openCart}
+                onMouseLeave={closeCart}
+              >
+                <Link to="/cart" className="p-2 hover:opacity-55 transition-opacity text-black relative flex" aria-label={`Cart (${totalItems} items)`}>
+                  <ShoppingBag style={{ width: 18, height: 18 }} />
+                  {totalItems > 0 && (
+                    <span
+                      className="absolute top-0.5 right-0.5 bg-black text-white rounded-full flex items-center justify-center"
+                      style={{ fontSize: 9, width: 15, height: 15, fontWeight: 600 }}
+                    >
+                      {totalItems > 9 ? '9+' : totalItems}
+                    </span>
+                  )}
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -205,6 +222,8 @@ export function Header() {
           </nav>
         )}
       </div>
+
+      <CartHoverPanel isOpen={cartOpen} onMouseEnter={openCart} onMouseLeave={closeCart} />
 
     </header>
   );
