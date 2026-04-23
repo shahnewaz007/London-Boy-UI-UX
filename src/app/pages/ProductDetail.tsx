@@ -143,44 +143,75 @@ export function ProductDetail() {
 
           {/*  Left: Gallery  */}
           <div className="lg:sticky lg:top-[128px] lg:self-start">
-            <div className="relative aspect-[3/4] bg-gray-50 overflow-hidden mb-3 group">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={activeImage}
-                  src={galleryImages[activeImage]}
-                  alt={product.name}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.35 }}
-                  className="w-full h-full object-cover"
-                />
-              </AnimatePresence>
-              {product.badge && (
-                <div className="absolute top-4 left-4 z-10 px-2.5 py-1" style={{ ...TEXT.badge, backgroundColor: product.badge === 'SALE' ? COLOR.accent : COLOR.surfaceDark }}>
-                  {product.badge}
+            {/*
+              Mobile : main image (aspect-3/4) on top, horizontal thumbnail row below
+              Desktop: thumbnail strip on the LEFT (vertical), main image fills remaining
+                       viewport height so both are always visible without scrolling
+            */}
+            <div className="flex flex-col lg:flex-row lg:gap-3 lg:h-[calc(100vh-160px)]">
+
+              {/* ── Thumbnail strip ── */}
+              {galleryImages.length > 1 && (
+                <div className="
+                  order-2 lg:order-first
+                  flex flex-row lg:flex-col
+                  gap-2 mt-3 lg:mt-0
+                  overflow-x-auto lg:overflow-x-hidden lg:overflow-y-auto
+                  lg:w-[68px] flex-shrink-0
+                  scrollbar-none
+                ">
+                  {galleryImages.map((img, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImage(i)}
+                      className={`
+                        flex-shrink-0 overflow-hidden transition-all duration-200
+                        border-b-2 bg-gray-50
+                        w-[60px] h-[75px] lg:w-full lg:h-[86px]
+                        ${activeImage === i
+                          ? 'border-black opacity-100'
+                          : 'border-transparent opacity-50 hover:opacity-85 hover:border-gray-300'}
+                      `}
+                      aria-label={`View image ${i + 1}`}
+                    >
+                      <img src={img} alt="" className="w-full h-full object-cover" />
+                    </button>
+                  ))}
                 </div>
               )}
-              {galleryImages.length > 1 && (
-                <>
-                  <button onClick={() => setActiveImage((i) => (i - 1 + galleryImages.length) % galleryImages.length)} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/85 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white z-10" aria-label="Previous">
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-                  <button onClick={() => setActiveImage((i) => (i + 1) % galleryImages.length)} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/85 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white z-10" aria-label="Next">
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </>
-              )}
-            </div>
-            {galleryImages.length > 1 && (
-              <div className="grid grid-cols-4 gap-2">
-                {galleryImages.map((img, i) => (
-                  <button key={i} onClick={() => setActiveImage(i)} className={`aspect-square bg-gray-50 overflow-hidden border-b-2 transition-all duration-200 ${activeImage === i ? 'border-black' : 'border-transparent opacity-50 hover:opacity-90 hover:border-gray-300'}`}>
-                    <img src={img} alt="" className="w-full h-full object-cover" />
-                  </button>
-                ))}
+
+              {/* ── Main image ── */}
+              <div className="order-1 lg:order-last flex-1 relative aspect-[3/4] lg:aspect-auto bg-gray-50 overflow-hidden group">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={activeImage}
+                    src={galleryImages[activeImage]}
+                    alt={product.name}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.35 }}
+                    className="w-full h-full object-cover"
+                  />
+                </AnimatePresence>
+                {product.badge && (
+                  <div className="absolute top-4 left-4 z-10 px-2.5 py-1" style={{ ...TEXT.badge, backgroundColor: product.badge === 'SALE' ? COLOR.accent : COLOR.surfaceDark }}>
+                    {product.badge}
+                  </div>
+                )}
+                {galleryImages.length > 1 && (
+                  <>
+                    <button onClick={() => setActiveImage((i) => (i - 1 + galleryImages.length) % galleryImages.length)} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/85 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white z-10" aria-label="Previous">
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <button onClick={() => setActiveImage((i) => (i + 1) % galleryImages.length)} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/85 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white z-10" aria-label="Next">
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </>
+                )}
               </div>
-            )}
+
+            </div>
           </div>
 
           {/*  Right: Product info  */}
